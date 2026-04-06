@@ -10,7 +10,7 @@
 <header class="h-10 bg-black">
     <div class="mx-auto flex h-full w-full max-w-[1200px] items-center justify-between px-3 sm:px-6">
         <a href="{{ auth()->check() ? route('attendance.index') : route('login') }}" class="flex items-center" aria-label="COACHTECH">
-            <img src="{{ asset('images/coachtech-header-logo.svg') }}" alt="COACHTECH" class="h-4 w-auto sm:h-5">
+            <img src="{{ asset('images/COACHTECHヘッダーロゴ.png') }}" alt="COACHTECH" class="h-4 w-auto sm:h-5">
         </a>
         @auth
             <nav class="flex items-center gap-4 text-[10px] font-medium text-white sm:gap-6 sm:text-xs">

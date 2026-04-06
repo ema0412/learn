@@ -64,7 +64,7 @@ MailHogはローカル開発向けのメールキャプチャツールです。
 `php artisan db:seed` 実行後に、以下の検証用アカウントが利用できます。
 
 ### 一般ユーザー
-- メールアドレス: `taro@example.com`
+- メールアドレス: `user@example.com`
 - パスワード: `password`
 
 ### 管理者ユーザー

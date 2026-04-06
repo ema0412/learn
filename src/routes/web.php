@@ -29,11 +29,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/email/verify', function () {
         return view('auth.verify-email');
     })->name('verification.notice');
-
-    Route::get('/email/verify/mailhog', function () {
-        return redirect()->away(config('services.mailhog.url'));
-    })->name('verification.mailhog');
-
+   
     Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
         $request->fulfill();
         return redirect()->route('attendance.index');
@@ -43,6 +39,10 @@ Route::middleware('auth')->group(function () {
         $request->user()->sendEmailVerificationNotification();
         return back()->with('message', '認証メールを再送しました。');
     })->middleware('throttle:6,1')->name('verification.send');
+   
+    Route::get('/email/verify/mailhog', function () {
+        return redirect()->away(config('services.mailhog.url'));
+    })->name('verification.mailhog');
 });
 
 Route::middleware(['auth', 'verified'])->group(function () {
