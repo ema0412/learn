@@ -24,6 +24,10 @@ return [
         'token' => env('POSTMARK_TOKEN'),
     ],
 
+    'mailhog' => [
+        'url' => env('MAILHOG_WEB_URL', 'http://localhost:8025'),
+    ],
+
     'ses' => [
         'key' => env('AWS_ACCESS_KEY_ID'),
         'secret' => env('AWS_SECRET_ACCESS_KEY'),

@@ -30,6 +30,10 @@ Route::middleware('auth')->group(function () {
         return view('auth.verify-email');
     })->name('verification.notice');
 
+    Route::get('/email/verify/mailhog', function () {
+        return redirect()->away(config('services.mailhog.url'));
+    })->name('verification.mailhog');
+
     Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
         $request->fulfill();
         return redirect()->route('attendance.index');
